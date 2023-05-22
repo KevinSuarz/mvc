@@ -2,12 +2,9 @@
 
 use Lib\Route;
 
-Route::get('/', function(){
-  return [
-    'title' => 'home',
-    'content' => 'hola desde la pagina de inicio'
-  ];
-});
+use App\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/contact', function(){
   return 'hola desde contact';
@@ -16,7 +13,6 @@ Route::get('/contact', function(){
 Route::get('/about', function(){
   return 'hola desde about';
 });
-
 
 Route::get('/courses', function(){
   return 'hola desde la pagina courses';  
